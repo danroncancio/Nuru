@@ -6,7 +6,7 @@ bool app_running = true;
 namespace Nuru {
     int Entry(int argc, char **argv) {
         Nuru::App *app = Nuru::CreateApp(argc, argv);
-        Nuru::App::Loop();
+        app->Loop();
         delete app;
         return 0;
     }

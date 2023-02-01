@@ -10,7 +10,7 @@ file(GLOB GLFW_SRC libs/glfw)
 file(GLOB IMGUI_SRC libs/imgui/*.cpp)
 file(GLOB IMGUI_BACKENDS_SRC libs/imgui/backends/imgui_impl_glfw.cpp libs/imgui/backends/imgui_impl_opengl3.cpp)
 
-add_executable(Nuru App/NuruApp.cpp libs/glad/src/gl.c ${NURU_SRC} ${IMGUI_SRC} ${IMGUI_BACKENDS_SRC})
+add_executable(Nuru NuruApp.cpp libs/glad/src/gl.c ${NURU_SRC} ${IMGUI_SRC} ${IMGUI_BACKENDS_SRC})
 
 target_include_directories(Nuru PUBLIC libs/glfw/include)
 target_include_directories(Nuru PUBLIC libs/glad/include)
