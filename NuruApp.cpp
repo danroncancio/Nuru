@@ -4,7 +4,7 @@
 class DemoWindow : public Nuru::Draw {
     void UIElement() {
         ImGui::Begin("Info");
-        ImGui::Text("Hello! 😊 🤣 👌");
+        ImGui::Text("Hello!");
         ImGui::End();
         ImGui::ShowDemoWindow();
     }

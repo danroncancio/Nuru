@@ -38,15 +38,22 @@ namespace Nuru {
         ImGui::CreateContext();
         ImGuiIO &io = ImGui::GetIO();
         (void) io;
-        io.Fonts->AddFontFromFileTTF("../assets/fonts/inter/Inter-Regular.otf", 18.0f);
-        io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+
+	// Font
+	ImFontConfig fontConfig;
+	fontConfig.FontDataOwnedByAtlas = false;
+	//io.Fonts->AddFontFromFileTTF("../assets/fonts/inter/Inter-Regular.otf", 18.0f);
+	ImFont *ubu_font = io.Fonts->AddFontFromFileTTF("assets/fonts/ubuntu/Ubuntu-R.ttf", 17.0f);
+	io.FontDefault = ubu_font;
+
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
         //io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-        io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+        //io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
         // Style
         ImGuiStyle& style = ImGui::GetStyle();
-        style.WindowBorderSize = 0.0f;
+        style.WindowBorderSize = 1.0f;
         style.FrameBorderSize = 1.0f;
         style.WindowRounding = 3;
         style.WindowRounding = 3;
@@ -101,10 +108,10 @@ namespace Nuru {
             // Update and Render additional Platform Windows
             // (Platform functions may change the current OpenGL context, so we save/restore it to make it easier to paste this code elsewhere.
             //  For this specific demo app we could also call glfwMakeContextCurrent(window) directly)
-            GLFWwindow *backup_current_context = glfwGetCurrentContext();
-            ImGui::UpdatePlatformWindows();
-            ImGui::RenderPlatformWindowsDefault();
-            glfwMakeContextCurrent(backup_current_context);
+            //GLFWwindow *backup_current_context = glfwGetCurrentContext();
+            //ImGui::UpdatePlatformWindows();
+            //ImGui::RenderPlatformWindowsDefault();
+            //glfwMakeContextCurrent(backup_current_context);
 
             glfwSwapInterval(1);
             glfwSwapBuffers(window);
